@@ -1,13 +1,13 @@
-import express from 'express';
-import cors from 'cors';
-import ejerciciosRoutes from '../src/Ejercicios.js';
+import express from 'express'
+import cors from 'cors'
+import ejerciciosRoutes from '../src/routes.js'
  
-const app = express();
+const app = express()
  
-app.use(cors());
-app.use(express.json());
+app.use(cors())
+app.use(express.json())
  
 // Montar las rutas
-app.use('/', ejerciciosRoutes);
+app.use('/', ejerciciosRoutes)
  
-export default app;
+export default app

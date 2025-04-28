@@ -1,9 +1,6 @@
-import express from 'express'
-const router = express.Router()
-
 // 1. Validar Contraseña
 
-router.post('/validar-password', (req, res) => {
+export const validarPassword = (req, res) => {
     const { password } = req.body
     const errores = []
  
@@ -29,6 +26,48 @@ router.post('/validar-password', (req, res) => {
         }
     )
 }
-)
 
-export default router  
+// 2. Convertir numero Romano a decimal
+export const romanoAEntero = (req, res) => {
+    const { romano } = req.body
+    if (!romano) {
+        return res.status(400).send(
+            { 
+                success: false,
+                message: "No se recibió número romano" 
+            }
+        )
+    }
+  
+    const mapa = {
+      'I': 1, 'V': 5, 'X': 10,
+      'L': 50, 'C': 100, 'D': 500, 'M': 1000
+    }
+    let total = 0
+    let previo = 0
+  
+    for (let i = romano.length - 1; i >= 0; i--) {
+      const valor = mapa[romano[i]]
+      if (!valor) {
+        return res.status(400).send(
+            {
+                success: false,
+                message: 'No es un número romano válido'
+            }
+        )
+      }
+      if (valor < previo) {
+        total -= valor
+      } else {
+        total += valor
+        previo = valor
+      }
+    }
+  
+    return res.status(200).send(
+        {
+            success: false,
+            message: 'No es un número romano válido'
+        }
+    )
+}
