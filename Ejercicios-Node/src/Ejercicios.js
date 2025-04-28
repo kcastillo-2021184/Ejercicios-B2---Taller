@@ -71,3 +71,39 @@ export const romanoAEntero = (req, res) => {
         }
     )
 }
+
+// 3 Converción de grados
+export const convertirTemperatura = (req, res) => {
+    const { valor, unidad } = req.body
+    if (typeof valor !== 'number' || !unidad) {
+      return res.status(400).json({ message: "Datos inválidos" })
+    }
+  
+    let C, F, K
+    switch (unidad.toUpperCase()) {
+      case 'C':
+        C = valor
+        F = (valor * 9/5) + 32
+        K = valor + 273.15
+        break
+      case 'F':
+        C = (valor - 32) * 5/9
+        F = valor
+        K = C + 273.15
+        break
+      case 'K':
+        C = valor - 273.15
+        F = (C * 9/5) + 32
+        K = valor
+        break
+      default:
+        return res.status(400).send({ message: "Unidad inválida" })
+    }
+  
+    res.send({
+      C: parseFloat(C.toFixed(2)),
+      F: parseFloat(F.toFixed(2)),
+      K: parseFloat(K.toFixed(2))
+    })
+}
+  

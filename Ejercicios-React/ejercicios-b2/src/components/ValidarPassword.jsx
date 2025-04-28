@@ -14,7 +14,7 @@ function ValidarPassword() {
 
     try {
 
-      const res = await axios.post('http://localhost:3000/validar-password', { password });
+      const res = await axios.post('http://localhost:3001/validar-password', { password });
 
       setResultado(res.data);
 
