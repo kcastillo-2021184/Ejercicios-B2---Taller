@@ -1,9 +1,9 @@
 // 1. Validar Contraseña
-
 export const validarPassword = (req, res) => {
     const { password } = req.body
     const errores = []
- 
+    let valida = false
+    
     if (!password) {
       return res.status(400).res(
             {
@@ -19,11 +19,15 @@ export const validarPassword = (req, res) => {
     if (!/[0-9]/.test(password)) errores.push("Debe tener al menos un número")
     if (!/[^A-Za-z0-9]/.test(password)) errores.push("Debe tener al menos un símbolo")
  
+    if(errores.length === 0){
+      valida = true
+    }
+
     res.send(
         {
         success: errores.length === 0,
         errores,
-        valida:true
+        valida
         }
     )
 }
