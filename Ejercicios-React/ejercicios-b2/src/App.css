@@ -1,0 +1,89 @@
+body {
+  background-color: #121212;
+  color: #f0f0f0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+}
+
+h1 {
+  text-align: center;
+  margin-top: 2rem;
+  font-size: 2.5rem;
+  color: #00BFFF;
+}
+
+nav {
+  display: flex;
+  justify-content: center;
+  margin: 2rem 0;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+  padding: 0;
+}
+
+nav ul li {
+  background-color: #1f1f1f;
+  padding: 0.5rem 1rem;
+  border-radius: 10px;
+  transition: background-color 0.3s;
+}
+
+nav ul li:hover {
+  background-color: #00BFFF;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #ffffff;
+  font-weight: bold;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin: 2rem auto;
+  width: 300px;
+  background-color: #1f1f1f;
+  padding: 2rem;
+  border-radius: 15px;
+  box-shadow: 0px 0px 10px #00BFFF;
+}
+
+input, select, button {
+  padding: 0.7rem;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+}
+
+input, select {
+  background-color: #333;
+  color: #f0f0f0;
+}
+
+button {
+  background-color: #00BFFF;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #009acd;
+}
+
+ul {
+  margin-top: 1rem;
+}
+
+ul li {
+  margin-bottom: 0.5rem;
+}
