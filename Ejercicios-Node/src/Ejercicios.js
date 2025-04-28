@@ -22,7 +22,8 @@ export const validarPassword = (req, res) => {
     res.send(
         {
         success: errores.length === 0,
-        errores
+        errores,
+        valida:true
         }
     )
 }

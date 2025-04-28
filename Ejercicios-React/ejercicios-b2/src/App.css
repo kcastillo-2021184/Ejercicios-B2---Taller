@@ -1,41 +1,46 @@
+/* Centrar el body completo */
 body {
   background-color: #121212;
   color: #f0f0f0;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: 'Poppins', sans-serif;
   margin: 0;
   padding: 0;
   min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
 }
 
+/* Título principal */
 h1 {
   text-align: center;
   margin-top: 2rem;
   font-size: 2.5rem;
-  color: #00BFFF;
+  color: #ffffff; /* Tu color sólido aquí */
 }
 
-nav {
-  display: flex;
-  justify-content: center;
-  margin: 2rem 0;
-}
 
+/* Menú de navegación */
 nav ul {
   list-style: none;
+  padding: 0;
+  margin: 2rem 0;
   display: flex;
   gap: 2rem;
-  padding: 0;
+  justify-content: center;
 }
 
 nav ul li {
   background-color: #1f1f1f;
-  padding: 0.5rem 1rem;
-  border-radius: 10px;
-  transition: background-color 0.3s;
+  padding: 0.8rem 1.5rem;
+  border-radius: 20px;
+  transition: all 0.3s;
 }
 
 nav ul li:hover {
-  background-color: #00BFFF;
+  background-color: #00C9FF;
+  transform: scale(1.1);
 }
 
 nav ul li a {
@@ -44,22 +49,34 @@ nav ul li a {
   font-weight: bold;
 }
 
+/* Contenedor del contenido principal */
+.container {
+  background-color: #1f1f1f;
+  padding: 2rem;
+  margin: 2rem auto; /* Centrado automático */
+  border-radius: 20px;
+  width: 90%;
+  max-width: 500px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+
+/* Formularios */
 form {
   display: flex;
   flex-direction: column;
   gap: 1rem;
-  margin: 2rem auto;
-  width: 300px;
-  background-color: #1f1f1f;
-  padding: 2rem;
-  border-radius: 15px;
-  box-shadow: 0px 0px 10px #00BFFF;
 }
 
 input, select, button {
-  padding: 0.7rem;
+  padding: 0.8rem;
   border: none;
-  border-radius: 8px;
+  border-radius: 10px;
   font-size: 1rem;
 }
 
@@ -69,21 +86,20 @@ input, select {
 }
 
 button {
-  background-color: #00BFFF;
-  color: white;
+  background-color: #333; 
+  color: #ffffff;
   font-weight: bold;
+  border: none;
+  padding: 0.8rem;
+  border-radius: 10px;
   cursor: pointer;
-  transition: background-color 0.3s;
+  font-size: 1rem;
+  transition: all 0.3s;
 }
+
 
 button:hover {
-  background-color: #009acd;
+  background-color: #009ACD;
+  transform: scale(1.05);
 }
 
-ul {
-  margin-top: 1rem;
-}
-
-ul li {
-  margin-bottom: 0.5rem;
-}
