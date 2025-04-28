@@ -76,7 +76,7 @@ export const romanoAEntero = (req, res) => {
 export const convertirTemperatura = (req, res) => {
     const { valor, unidad } = req.body
     if (typeof valor !== 'number' || !unidad) {
-      return res.status(400).json({ message: "Datos inválidos" })
+      return res.status(400).send({ message: "Datos inválidos" })
     }
   
     let C, F, K
@@ -107,3 +107,22 @@ export const convertirTemperatura = (req, res) => {
     })
 }
   
+//Generador de Contraseñas Aleatorias
+export const randomPass = (req, res) => {
+  const { longitud, mayusculas, numeros, simbolos } = req.body;
+  if (!longitud || typeof longitud !== 'number') {
+    return res.status(400).send({ message: "Longitud inválida" });
+  }
+ 
+  let caracteres = 'abcdefghijklmnopqrstuvwxyz';
+  if (mayusculas) caracteres += 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+  if (numeros) caracteres += '0123456789';
+  if (simbolos) caracteres += '!@#$%^&*()_+[]{}|;:,.<>?';
+ 
+  let password = '';
+  for (let i = 0; i < longitud; i++) {
+    password += caracteres.charAt(Math.floor(Math.random() * caracteres.length));
+  }
+ 
+  res.send({ password });
+}
